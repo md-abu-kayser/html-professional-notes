@@ -1,11 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing Table</title>
-</head>
-<body>
-    <div>Basic - $10</div>
-</body>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #f8fafc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 1rem;
+      }
+      .pricing {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .plan {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 280px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s;
+        border: 2px solid transparent;
+      }
+      .plan:hover {
+        transform: scale(1.03);
+      }
+      .plan.featured {
+        border-color: #2563eb;
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+      }
+      .plan h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1e293b;
+        margin: 1rem 0;
+      }
+      .plan ul {
+        list-style: none;
+        margin: 1.5rem 0;
+        text-align: left;
+      }
+      .plan li {
+        padding: 0.3rem 0;
+        color: #475569;
+      }
+      .plan li::before {
+        content: "✓ ";
+        color: #2563eb;
+        font-weight: bold;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 0.7em 2em;
+        border-radius: 2em;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Basic</h3>
+        <div class="price">$9<span style="font-size: 1rem">/mo</span></div>
+        <ul>
+          <li>5 Projects</li>
+          <li>10 GB Storage</li>
+          <li>Basic Support</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="plan featured">
+        <h3>Pro</h3>
+        <div class="price">$29<span style="font-size: 1rem">/mo</span></div>
+        <ul>
+          <li>Unlimited Projects</li>
+          <li>50 GB Storage</li>
+          <li>Priority Support</li>
+          <li>Advanced Analytics</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <div class="price">$99<span style="font-size: 1rem">/mo</span></div>
+        <ul>
+          <li>Unlimited Everything</li>
+          <li>200 GB Storage</li>
+          <li>Dedicated Support</li>
+          <li>Custom Integrations</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+    </div>
+  </body>
 </html>
