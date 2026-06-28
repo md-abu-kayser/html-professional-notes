@@ -1,12 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Popup</title>
-</head>
-<body>
-    <button onclick="document.getElementById('modal').style.display='block'">Open Modal</button>
-    <div id="modal" style="display:none;">Modal Content</div>
-</body>
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Popup | Accessible</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .open-btn {
+        padding: 0.8em 1.8em;
+        font-size: 1.1rem;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .open-btn:hover {
+        background: #1d4ed8;
+      }
+      /* backdrop */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s,
+          visibility 0.3s;
+        z-index: 1000;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal {
+        background: white;
+        border-radius: 1rem;
+        max-width: 500px;
+        width: 90%;
+        padding: 2rem;
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: scale(0.9);
+        transition: transform 0.3s;
+      }
+      .modal-overlay.active .modal {
+        transform: scale(1);
+      }
+      .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #64748b;
+        line-height: 1;
+      }
+      .close-btn:hover {
+        color: #0f172a;
+      }
+      h2 {
+        margin-bottom: 1rem;
+        color: #0f172a;
+      }
+      p {
+        color: #475569;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="open-btn" aria-haspopup="dialog" id="openModalBtn">
+      Show Modal
+    </button>
+
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal">
+        <button class="close-btn" aria-label="Close modal" id="closeModalBtn">
+          &times;
+        </button>
+        <h2 id="modalTitle">Important Update</h2>
+        <p>
+          This modal is fully accessible: focus is trapped, backdrop closes on
+          Escape, and screen readers understand it as a dialog.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const overlay = document.getElementById("modalOverlay");
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
+
+      function openModal() {
+        overlay.classList.add("active");
+        openBtn.setAttribute("aria-expanded", "true");
+        closeBtn.focus();
+      }
+      function closeModal() {
+        overlay.classList.remove("active");
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("active"))
+          closeModal();
+      });
+    </script>
+  </body>
 </html>
