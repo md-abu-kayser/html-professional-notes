@@ -1,14 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form with JS</title>
-</head>
-<body>
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name">
-        <button type="submit">Send</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form with Validation</title>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #f1f5f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .field {
+        margin-bottom: 1.2rem;
+      }
+      label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.7em;
+        border: 2px solid #cbd5e1;
+        border-radius: 0.5rem;
+      }
+      .error {
+        color: #dc2626;
+        font-size: 0.85rem;
+        display: none;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 0.8em 2em;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .success-msg {
+        color: #16a34a;
+        display: none;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="contactForm" novalidate>
+      <h2>Contact Us</h2>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+        <div class="error" id="nameError">Name is required.</div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <div class="error" id="emailError">Valid email required.</div>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+        <div class="error" id="msgError">Message cannot be empty.</div>
+      </div>
+      <button type="submit">Send</button>
+      <div class="success-msg" id="successMsg">Message sent successfully!</div>
     </form>
-</body>
+    <script>
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+        document
+          .querySelectorAll(".error")
+          .forEach((el) => (el.style.display = "none"));
+        if (!name.value.trim()) {
+          document.getElementById("nameError").style.display = "block";
+          valid = false;
+        }
+        if (!email.validity.valid || !email.value.trim()) {
+          document.getElementById("emailError").style.display = "block";
+          valid = false;
+        }
+        if (!message.value.trim()) {
+          document.getElementById("msgError").style.display = "block";
+          valid = false;
+        }
+        if (valid) {
+          document.getElementById("successMsg").style.display = "block";
+          form.reset();
+        }
+      });
+    </script>
+  </body>
 </html>
