@@ -1,11 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testimonial Carousel</title>
-</head>
-<body>
-    <div class="testimonial">Great product!</div>
-</body>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .carousel {
+        background: #1e293b;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 500px;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+      .testimonial {
+        display: none;
+      }
+      .testimonial.active {
+        display: block;
+      }
+      .quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+      .author {
+        font-weight: bold;
+        color: #38bdf8;
+      }
+      .controls {
+        margin-top: 1.5rem;
+      }
+      button {
+        background: #334155;
+        border: none;
+        color: white;
+        padding: 0.5em 1em;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin: 0 0.5rem;
+      }
+      button:hover {
+        background: #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="testimonial active">
+        <p class="quote">
+          "Absolutely fantastic work! The team delivered beyond expectations."
+        </p>
+        <p class="author">— Jane Cooper, CEO at TechNova</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">
+          "Professional, fast, and incredibly talented. Highly recommended."
+        </p>
+        <p class="author">— Robert Fox, CTO at Innovate</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">
+          "Our online presence has never been stronger. True experts."
+        </p>
+        <p class="author">— Albert Flores, Marketing Director</p>
+      </div>
+      <div class="controls">
+        <button id="prev">← Prev</button>
+        <button id="next">Next →</button>
+      </div>
+    </div>
+    <script>
+      const testimonials = document.querySelectorAll(".testimonial");
+      let current = 0;
+      function show(index) {
+        testimonials.forEach((t, i) =>
+          t.classList.toggle("active", i === index),
+        );
+      }
+      document.getElementById("prev").addEventListener("click", () => {
+        current = (current - 1 + testimonials.length) % testimonials.length;
+        show(current);
+      });
+      document.getElementById("next").addEventListener("click", () => {
+        current = (current + 1) % testimonials.length;
+        show(current);
+      });
+      // Auto-play
+      setInterval(() => {
+        current = (current + 1) % testimonials.length;
+        show(current);
+      }, 5000);
+    </script>
+  </body>
 </html>
