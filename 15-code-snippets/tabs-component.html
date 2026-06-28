@@ -1,12 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabs Component</title>
-</head>
-<body>
-    <button onclick="showTab(1)">Tab 1</button>
-    <div id="tab1">Content 1</div>
-</body>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 3rem;
+      }
+      .tabs-container {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+      }
+      .tab-list {
+        display: flex;
+        border-bottom: 2px solid #e5e7eb;
+      }
+      .tab-btn {
+        flex: 1;
+        padding: 0.8rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        color: #6b7280;
+        border-bottom: 3px solid transparent;
+        transition: 0.2s;
+      }
+      .tab-btn[aria-selected="true"] {
+        color: #2563eb;
+        border-bottom-color: #2563eb;
+      }
+      .tab-panel {
+        display: none;
+        padding: 1.5rem;
+        animation: fade 0.3s;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs-container">
+      <div class="tab-list" role="tablist" aria-label="Content tabs">
+        <button
+          class="tab-btn"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel1"
+          id="tab1"
+        >
+          Overview
+        </button>
+        <button
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel2"
+          id="tab2"
+        >
+          Features
+        </button>
+        <button
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel3"
+          id="tab3"
+        >
+          Pricing
+        </button>
+      </div>
+      <div
+        class="tab-panel active"
+        id="panel1"
+        role="tabpanel"
+        aria-labelledby="tab1"
+      >
+        <h2>Overview</h2>
+        <p>
+          This tabs component is fully accessible with ARIA roles and keyboard
+          navigation.
+        </p>
+      </div>
+      <div class="tab-panel" id="panel2" role="tabpanel" aria-labelledby="tab2">
+        <h2>Features</h2>
+        <p>
+          Lightweight, no dependencies, and works with just vanilla JavaScript.
+        </p>
+      </div>
+      <div class="tab-panel" id="panel3" role="tabpanel" aria-labelledby="tab3">
+        <h2>Pricing</h2>
+        <p>Free and open source. Use it anywhere!</p>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.setAttribute("aria-selected", "false"));
+          panels.forEach((p) => p.classList.remove("active"));
+          tab.setAttribute("aria-selected", "true");
+          document
+            .getElementById(tab.getAttribute("aria-controls"))
+            .classList.add("active");
+        });
+      });
+
+      // Keyboard support
+      document.querySelector(".tab-list").addEventListener("keydown", (e) => {
+        const current = document.activeElement;
+        const tabArray = Array.from(tabs);
+        let index = tabArray.indexOf(current);
+        if (e.key === "ArrowRight") {
+          index = (index + 1) % tabs.length;
+          tabs[index].focus();
+          tabs[index].click();
+        } else if (e.key === "ArrowLeft") {
+          index = (index - 1 + tabs.length) % tabs.length;
+          tabs[index].focus();
+          tabs[index].click();
+        }
+      });
+    </script>
+  </body>
 </html>
