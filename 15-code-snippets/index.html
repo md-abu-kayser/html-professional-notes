@@ -1,12 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Snippets Index</title>
-</head>
-<body>
-    <h1>15+ Useful HTML/CSS/JS Code Snippets</h1>
-    <p>Welcome to the collection!</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20 HTML Code Snippets – Professional Showcase</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .subtitle {
+        text-align: center;
+        opacity: 0.8;
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #1e293b;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        border: 1px solid #334155;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.8rem;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+        border-color: #38bdf8;
+      }
+      .card h2 {
+        font-size: 1.3rem;
+        color: #38bdf8;
+      }
+      .card p {
+        opacity: 0.7;
+        font-size: 0.9rem;
+        flex-grow: 1;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.3rem;
+      }
+      .tag {
+        display: inline-block;
+        background: #334155;
+        padding: 0.2em 0.6em;
+        border-radius: 2em;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧩 20 HTML Snippets</h1>
+    <p class="subtitle">
+      Production‑ready, fully accessible &amp; responsive components
+    </p>
+    <div class="grid">
+      <a href="semantic-page-template.html" class="card">
+        <h2>📄 Semantic Page</h2>
+        <p>HTML5 semantic layout with header, main, aside, footer.</p>
+        <div class="tags"><span class="tag">HTML5</span></div>
+      </a>
+      <a href="accessible-form.html" class="card">
+        <h2>♿ Accessible Form</h2>
+        <p>Fully accessible login form with ARIA labels.</p>
+        <div class="tags"><span class="tag">a11y</span></div>
+      </a>
+      <a href="responsive-navbar.html" class="card">
+        <h2>🧭 Responsive Navbar</h2>
+        <p>Mobile‑first navigation with hamburger menu.</p>
+        <div class="tags">
+          <span class="tag">CSS</span><span class="tag">JS</span>
+        </div>
+      </a>
+      <a href="hero-section.html" class="card">
+        <h2>🦸 Hero Section</h2>
+        <p>Eye-catching hero with CTA and background image.</p>
+        <div class="tags"><span class="tag">CSS</span></div>
+      </a>
+      <a href="data-table.html" class="card">
+        <h2>📊 Data Table</h2>
+        <p>Responsive table with striped rows and hover.</p>
+        <div class="tags"><span class="tag">Table</span></div>
+      </a>
+      <a href="email-boilerplate.html" class="card">
+        <h2>✉️ Email Boilerplate</h2>
+        <p>HTML email template with inline styles.</p>
+        <div class="tags"><span class="tag">Email</span></div>
+      </a>
+      <a href="modal-popup.html" class="card">
+        <h2>🔲 Modal Popup</h2>
+        <p>Accessible modal with backdrop and focus trap.</p>
+        <div class="tags">
+          <span class="tag">JS</span><span class="tag">a11y</span>
+        </div>
+      </a>
+      <a href="accordion-faq.html" class="card">
+        <h2>📚 Accordion FAQ</h2>
+        <p>Smooth expanding FAQ section.</p>
+        <div class="tags"><span class="tag">JS</span></div>
+      </a>
+      <a href="tabs-component.html" class="card">
+        <h2>🗂️ Tabs</h2>
+        <p>Tabbed interface with ARIA and keyboard navigation.</p>
+        <div class="tags">
+          <span class="tag">JS</span><span class="tag">a11y</span>
+        </div>
+      </a>
+      <a href="card-grid.html" class="card">
+        <h2>🃏 Card Grid</h2>
+        <p>Responsive card layout with hover effects.</p>
+        <div class="tags"><span class="tag">CSS Grid</span></div>
+      </a>
+      <a href="pricing-table.html" class="card">
+        <h2>💲 Pricing Table</h2>
+        <p>Compare plans with a highlighted option.</p>
+        <div class="tags"><span class="tag">Flexbox</span></div>
+      </a>
+      <a href="image-gallery.html" class="card">
+        <h2>🖼️ Image Gallery</h2>
+        <p>Lightbox gallery with grid layout.</p>
+        <div class="tags"><span class="tag">JS</span></div>
+      </a>
+      <a href="animated-loader.html" class="card">
+        <h2>⏳ Animated Loader</h2>
+        <p>Pure CSS spinners and loaders.</p>
+        <div class="tags"><span class="tag">CSS</span></div>
+      </a>
+      <a href="contact-form-js.html" class="card">
+        <h2>📬 Contact Form</h2>
+        <p>Form with client‑side validation.</p>
+        <div class="tags"><span class="tag">JS</span></div>
+      </a>
+      <a href="footer-section.html" class="card">
+        <h2>🥾 Footer</h2>
+        <p>Multi‑column responsive footer.</p>
+        <div class="tags"><span class="tag">CSS</span></div>
+      </a>
+      <a href="testimonial-carousel.html" class="card">
+        <h2>💬 Testimonial Carousel</h2>
+        <p>Auto‑playing customer quotes slider.</p>
+        <div class="tags"><span class="tag">JS</span></div>
+      </a>
+      <a href="progress-bar.html" class="card">
+        <h2>📈 Progress Bar</h2>
+        <p>Animated skill / loading bars.</p>
+        <div class="tags"><span class="tag">CSS</span></div>
+      </a>
+      <a href="tooltip.html" class="card">
+        <h2>💡 Tooltip</h2>
+        <p>Accessible hover tooltips with arrow.</p>
+        <div class="tags">
+          <span class="tag">CSS</span><span class="tag">a11y</span>
+        </div>
+      </a>
+      <a href="breadcrumbs.html" class="card">
+        <h2>🍞 Breadcrumbs</h2>
+        <p>Navigation breadcrumb trail.</p>
+        <div class="tags">
+          <span class="tag">CSS</span><span class="tag">a11y</span>
+        </div>
+      </a>
+      <a href="search-bar.html" class="card">
+        <h2>🔍 Search Bar</h2>
+        <p>Expanding search input with icon.</p>
+        <div class="tags">
+          <span class="tag">CSS</span><span class="tag">JS</span>
+        </div>
+      </a>
+    </div>
+  </body>
 </html>
