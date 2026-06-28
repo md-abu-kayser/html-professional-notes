@@ -1,11 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordion FAQ</title>
-</head>
-<body>
-    <details><summary>Question 1</summary><p>Answer</p></details>
-</body>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f8fafc;
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        color: #0f172a;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .accordion-item {
+        border: 1px solid #cbd5e1;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+      }
+      .accordion-header {
+        width: 100%;
+        text-align: left;
+        padding: 1rem 1.5rem;
+        background: white;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+      }
+      .accordion-header:hover {
+        background: #f1f5f9;
+      }
+      .accordion-header[aria-expanded="true"] {
+        background: #e0e7ff;
+      }
+      .icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+      }
+      .accordion-header[aria-expanded="true"] .icon {
+        transform: rotate(45deg);
+      }
+      .accordion-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        background: white;
+      }
+      .accordion-panel p {
+        padding: 0 1.5rem 1rem;
+        color: #334155;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <span>What is your return policy?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          You can return any item within 30 days of purchase for a full refund.
+          Items must be in original condition.
+        </p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Do you ship internationally?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          Yes, we ship to over 50 countries worldwide. Shipping costs vary
+          depending on the destination.
+        </p>
+      </div>
+    </div>
+    <script>
+      const headers = document.querySelectorAll(".accordion-header");
+      headers.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          // Close all
+          headers.forEach((h) => {
+            h.setAttribute("aria-expanded", "false");
+            h.nextElementSibling.style.maxHeight = null;
+          });
+          // Open clicked if it was closed
+          if (!expanded) {
+            btn.setAttribute("aria-expanded", "true");
+            const panel = btn.nextElementSibling;
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
