@@ -1,13 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Section</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Footer</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui;
+        background: #f8fafc;
+      }
+      footer {
+        background: #1e293b;
+        color: #cbd5e1;
+        padding: 3rem 2rem 1rem;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .footer-col h4 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+      .footer-col a {
+        color: #94a3b8;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .footer-col a:hover {
+        color: white;
+      }
+      .bottom-bar {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #334155;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
     <footer>
-        <p>&copy; 2026 All Rights Reserved</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a><a href="#">Careers</a><a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a><a href="#">Pricing</a><a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a><a href="#">Contact</a
+          ><a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="bottom-bar">&copy; 2025 YourBrand. All rights reserved.</div>
     </footer>
-</body>
+  </body>
 </html>
