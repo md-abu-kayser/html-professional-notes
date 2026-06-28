@@ -1,11 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Breadcrumbs</title>
-</head>
-<body>
-    <nav aria-label="breadcrumb"><a href="#">Home</a> / <a href="#">Category</a></nav>
-</body>
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 2rem;
+        background: #f8fafc;
+      }
+      nav[aria-label="Breadcrumb"] ol {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      nav[aria-label="Breadcrumb"] li {
+        display: flex;
+        align-items: center;
+        color: #64748b;
+      }
+      nav[aria-label="Breadcrumb"] li + li::before {
+        content: "/";
+        margin: 0 0.5rem;
+        color: #94a3b8;
+      }
+      nav[aria-label="Breadcrumb"] a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      nav[aria-label="Breadcrumb"] a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Data</a></li>
+        <li aria-current="page">Current Page</li>
+      </ol>
+    </nav>
+  </body>
 </html>
