@@ -1,11 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Bar</title>
-</head>
-<body>
-    <input type="search" placeholder="Search...">
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding Search Bar</title>
+    <style>
+      body {
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .search-wrapper {
+        position: relative;
+      }
+      .search-input {
+        width: 40px;
+        padding: 0.7em 1em 0.7em 2.5em;
+        border: 2px solid #334155;
+        border-radius: 2em;
+        background: #1e293b;
+        color: white;
+        outline: none;
+        transition: width 0.4s ease;
+        font-size: 1rem;
+      }
+      .search-input:focus {
+        width: 250px;
+        border-color: #38bdf8;
+      }
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        pointer-events: none;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Search..."
+        aria-label="Search"
+      />
+    </div>
+  </body>
 </html>
