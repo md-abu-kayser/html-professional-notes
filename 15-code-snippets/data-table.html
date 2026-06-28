@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Data Table</title>
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 2rem;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      h2 {
+        margin-bottom: 1rem;
+      }
+      .table-wrapper {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      th,
+      td {
+        padding: 0.8rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      thead {
+        background: #1e293b;
+        color: white;
+      }
+      tbody tr:hover {
+        background: #f1f5f9;
+      }
+      tbody tr:nth-child(even) {
+        background: #f8fafc;
+      }
+      @media (max-width: 600px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+        thead tr {
+          display: none;
+        }
+        td {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.5rem 1rem;
+        }
+        td::before {
+          content: attr(data-label);
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Employee List</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Office</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Name">Airi Satou</td>
+            <td data-label="Position">Accountant</td>
+            <td data-label="Office">Tokyo</td>
+            <td data-label="Age">33</td>
+          </tr>
+          <tr>
+            <td data-label="Name">Angelica Ramos</td>
+            <td data-label="Position">Chief Executive</td>
+            <td data-label="Office">London</td>
+            <td data-label="Age">47</td>
+          </tr>
+          <tr>
+            <td data-label="Name">Ashton Cox</td>
+            <td data-label="Position">Junior Author</td>
+            <td data-label="Office">San Francisco</td>
+            <td data-label="Age">66</td>
+          </tr>
+          <tr>
+            <td data-label="Name">Bradley Greer</td>
+            <td data-label="Position">Engineer</td>
+            <td data-label="Office">London</td>
+            <td data-label="Age">41</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
