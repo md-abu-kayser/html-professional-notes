@@ -1,11 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tooltip</title>
-</head>
-<body>
-    <span title="Tooltip text">Hover me</span>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Tooltip</title>
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 3rem;
+        background: #f3f4f6;
+        text-align: center;
+      }
+      .tooltip-trigger {
+        position: relative;
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 0.6em 1.2em;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+      }
+      .tooltip {
+        visibility: hidden;
+        width: 200px;
+        background: #1e293b;
+        color: #fff;
+        text-align: center;
+        border-radius: 0.4rem;
+        padding: 0.5em;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #1e293b transparent transparent transparent;
+      }
+      .tooltip-trigger:hover .tooltip,
+      .tooltip-trigger:focus .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tooltip-trigger" aria-describedby="tooltip1">
+      Hover or Focus me
+      <span class="tooltip" id="tooltip1" role="tooltip"
+        >I'm a pure CSS tooltip with an arrow!</span
+      >
+    </button>
+  </body>
 </html>
