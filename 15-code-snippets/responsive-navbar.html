@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui;
+        background: #f8fafc;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1e293b;
+        padding: 1rem 2rem;
+        position: relative;
+      }
+      .logo {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .bar {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: #1e293b;
+          padding: 1rem;
+        }
+        .nav-links.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Main navigation">
+      <div class="logo">BRAND</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div
+        class="hamburger"
+        id="hamburger"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+      >
+        <span class="bar"></span><span class="bar"></span
+        ><span class="bar"></span>
+      </div>
+    </nav>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const expanded = navLinks.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", expanded);
+      });
+    </script>
+  </body>
+</html>
