@@ -1,11 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Gallery</title>
-</head>
-<body>
-    <img src="placeholder.jpg" alt="Image">
-</body>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #0f172a;
+        color: white;
+        padding: 2rem;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      .gallery img {
+        width: 100%;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .gallery img:hover {
+        transform: scale(1.03);
+      }
+      .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .lightbox.active {
+        display: flex;
+      }
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+      .close {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Photo Gallery</h1>
+    <div class="gallery">
+      <img src="https://picsum.photos/400/300?random=10" alt="Gallery image" />
+      <img src="https://picsum.photos/400/300?random=11" alt="Gallery image" />
+      <img src="https://picsum.photos/400/300?random=12" alt="Gallery image" />
+      <img src="https://picsum.photos/400/300?random=13" alt="Gallery image" />
+      <img src="https://picsum.photos/400/300?random=14" alt="Gallery image" />
+      <img src="https://picsum.photos/400/300?random=15" alt="Gallery image" />
+    </div>
+    <div class="lightbox" id="lightbox">
+      <span class="close" id="closeLightbox">&times;</span>
+      <img src="" alt="Lightbox image" id="lightboxImg" />
+    </div>
+    <script>
+      const galleryImages = document.querySelectorAll(".gallery img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      galleryImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          lightboxImg.src = img.src;
+        });
+      });
+      document.getElementById("closeLightbox").addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("active");
+      });
+    </script>
+  </body>
 </html>
