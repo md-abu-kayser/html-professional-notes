@@ -1,5 +1,11 @@
-# Headings Outline & Accessibility
+# Headings Outline and Accessibility
 
-Proper nesting, avoid skipping levels. Use headings to convey structure.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [figcaption, details, summary](05-figcaption-details-summary.md)
+**What it will cover:** Heading hierarchy (`h1`–`h6`) and how it forms the page's accessible outline.
+
+---
+
+This lesson is part of **[Semantic HTML](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

@@ -1,5 +1,11 @@
-# article, section & div
+# Article Section and Div
 
-`<article>` for self‑contained content, `<section>` for thematic grouping, `<div>` for styling.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Headings Outline & Accessibility](04-headings-outline-and-accessibility.md)
+**What it will cover:** Choosing between `<article>`, `<section>`, and plain `<div>` based on content independence and structure.
+
+---
+
+This lesson is part of **[Semantic HTML](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

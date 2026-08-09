@@ -1,5 +1,11 @@
-# Structural Elements
+# Structural Elements Header Footer Nav Main Aside
 
-`<header>`, `<footer>`, `<nav>`, `<main>`, `<aside>` – define page regions.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [article, section & div](03-article-section-and-div.md)
+**What it will cover:** The page-level landmark elements — `header`, `footer`, `nav`, `main`, `aside` — and the roles they imply.
+
+---
+
+This lesson is part of **[Semantic HTML](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

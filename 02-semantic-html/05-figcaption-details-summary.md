@@ -1,5 +1,11 @@
-# figcaption, details & summary
+# Figcaption Details Summary
 
-`<details>` for collapsible content, `<summary>` for toggle label. `<figcaption>` associates caption with `<figure>`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [time, address & other inline semantics](06-time-address-and-other-inline-semantics.md)
+**What it will cover:** Captioned media with `<figure>`/`<figcaption>`, and native disclosure widgets with `<details>`/`<summary>`.
+
+---
+
+This lesson is part of **[Semantic HTML](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

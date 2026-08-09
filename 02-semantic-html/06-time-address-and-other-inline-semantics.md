@@ -1,5 +1,11 @@
-# time, address & other inline semantics
+# Time Address and Other Inline Semantics
 
-`<time datetime="…">`, `<address>`, `<abbr>`, `<cite>`, `<q>`, `<blockquote>`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Semantic Tables – caption, thead, tbody, tfoot](07-semantic-tables-caption-thead-tbody-tfoot.md)
+**What it will cover:** Lesser-used but meaningful inline tags: `<time>`, `<address>`, and friends.
+
+---
+
+This lesson is part of **[Semantic HTML](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.
