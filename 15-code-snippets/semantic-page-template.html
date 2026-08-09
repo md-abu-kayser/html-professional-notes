@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Page Template</title>
+  <meta name="description" content="A production-ready semantic HTML5 page skeleton: header, nav, main, aside, and footer landmarks.">
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; line-height: 1.5; }
+    .skip-link {
+      position: absolute; left: -999px; top: 0;
+      background: #111827; color: #fff; padding: 0.5rem 1rem; z-index: 100;
+    }
+    .skip-link:focus { left: 0.5rem; top: 0.5rem; }
+    header, footer { padding: 1rem 1.5rem; background: #f4f4f5; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+    nav a { color: #111827; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; }
+    main { display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    aside { border-left: 1px solid #ddd; padding-left: 1.5rem; }
+    @media (max-width: 640px) { main { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+      <h1>Page Title</h1>
+      <p>This is the main content area. Use exactly one <code>&lt;main&gt;</code> per page, and exactly one <code>&lt;h1&gt;</code> inside it.</p>
+
+      <section aria-labelledby="section-1-heading">
+        <h2 id="section-1-heading">A Content Section</h2>
+        <p>Group related content with <code>&lt;section&gt;</code> when it has its own heading — otherwise a plain <code>&lt;div&gt;</code> is the right choice.</p>
+      </section>
+    </article>
+
+    <aside aria-label="Related links">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="#">Related article one</a></li>
+        <li><a href="#">Related article two</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Your Company. All rights reserved.</p>
+  </footer>
+</body>
+</html>

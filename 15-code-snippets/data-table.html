@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Data Table</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; }
+    body { max-width: 700px; margin: 2rem auto; padding: 0 1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    caption { text-align: left; font-weight: 600; margin-bottom: 0.5rem; }
+    th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid #ddd; }
+    thead th { background: #f4f4f5; border-bottom: 2px solid #ccc; }
+    tfoot td, tfoot th { font-weight: 600; border-top: 2px solid #ccc; }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>Quarterly revenue by region (in thousands USD)</caption>
+    <thead>
+      <tr>
+        <th scope="col">Region</th>
+        <th scope="col">Q1</th>
+        <th scope="col">Q2</th>
+        <th scope="col">Q3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">North America</th>
+        <td>420</td>
+        <td>465</td>
+        <td>512</td>
+      </tr>
+      <tr>
+        <th scope="row">Europe</th>
+        <td>310</td>
+        <td>298</td>
+        <td>335</td>
+      </tr>
+      <tr>
+        <th scope="row">Asia Pacific</th>
+        <td>275</td>
+        <td>301</td>
+        <td>340</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">Total</th>
+        <td>1005</td>
+        <td>1064</td>
+        <td>1187</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

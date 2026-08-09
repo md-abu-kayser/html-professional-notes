@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Email Boilerplate</title>
+  <!--[if mso]>
+  <noscript>
+  <xml>
+  <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+  </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    body, table, td { font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; padding: 0; width: 100% !important; background: #f4f4f5; }
+    img { border: 0; display: block; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <!-- Preheader: shown in inbox preview text, hidden in the email body -->
+  <div style="display:none; max-height:0; overflow:hidden;">
+    Your order has shipped &mdash; track it inside.
+  </div>
+
+  <!--
+    Email clients (especially Outlook desktop, which renders using Word's
+    engine) don't reliably support CSS layout like Flexbox or Grid. Nested
+    tables with role="presentation" and inline styles remain the most
+    compatible way to lay out an HTML email across clients.
+  -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f5;">
+    <tr>
+      <td align="center" style="padding: 24px 16px;">
+
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px; width:100%; background:#ffffff; border-radius:8px;">
+          <tr>
+            <td style="padding: 24px; text-align:center; background:#111827; border-radius:8px 8px 0 0;">
+              <img src="logo.png" alt="Company Name" width="140">
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 32px 24px; color:#111827; font-size:16px; line-height:1.5;">
+              <h1 style="font-size:20px; margin:0 0 16px;">Your order has shipped!</h1>
+              <p style="margin:0 0 16px;">Hi there &mdash; great news, your order #10432 is on its way.</p>
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="border-radius:4px; background:#2563eb;">
+                    <a href="#" style="display:inline-block; padding:12px 24px; color:#ffffff; text-decoration:none; font-weight:bold;">Track your order</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 24px; text-align:center; color:#6b7280; font-size:12px;">
+              &copy; 2026 Company Name. All rights reserved.<br>
+              123 Main St, City, Country
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; }
+    body { margin: 0; }
+    .hero { position: relative; color: #fff; }
+    .hero picture, .hero img { display: block; width: 100%; height: 60vh; min-height: 320px; object-fit: cover; }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 1.5rem;
+    }
+    .hero__overlay h1 { font-size: clamp(1.75rem, 5vw, 3rem); margin: 0 0 0.75rem; }
+    .hero__overlay p { max-width: 40ch; margin: 0 0 1.5rem; }
+    .hero__cta { background: #fff; color: #111; padding: 0.75rem 1.5rem; border-radius: 999px; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <section class="hero" aria-label="Introduction">
+    <!--
+      Art direction with <picture>: not just "smaller files on mobile" but
+      genuinely different crops per breakpoint. loading="eager" is
+      intentional here — this image is above the fold, so lazy-loading it
+      would delay the largest visible element (hurts LCP). See
+      09-performance-optimization for the full explanation.
+    -->
+    <picture>
+      <source media="(min-width: 900px)" srcset="hero-wide.jpg">
+      <source media="(min-width: 600px)" srcset="hero-tablet.jpg">
+      <img src="hero-mobile.jpg" alt="Team collaborating around a table with laptops open" loading="eager">
+    </picture>
+    <div class="hero__overlay">
+      <h1>Build Faster, Ship Sooner</h1>
+      <p>Everything your team needs to plan, build, and launch — in one place.</p>
+      <a class="hero__cta" href="#get-started">Get started free</a>
+    </div>
+  </section>
+</body>
+</html>
