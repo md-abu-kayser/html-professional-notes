@@ -1,5 +1,11 @@
-# Textarea & File Input
+# Textarea and File Input
 
-`<textarea rows="…" cols="…">`, `<input type="file" accept=".jpg,.png" multiple>`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Form Validation](06-form-validation-required-pattern-min-max.md)
+**What it will cover:** Multi-line text entry with `<textarea>` and file uploads with `<input type="file">`.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

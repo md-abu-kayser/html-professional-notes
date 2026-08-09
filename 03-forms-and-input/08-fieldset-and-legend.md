@@ -1,5 +1,11 @@
-# Fieldset & Legend
+# Fieldset and Legend
 
-Group form controls: `<fieldset>`, `<legend>`. Accessibility benefits.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Autocomplete & Accessibility](09-autocomplete-and-accessibility.md)
+**What it will cover:** Grouping related fields semantically with `<fieldset>` and `<legend>`.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

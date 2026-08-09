@@ -1,5 +1,11 @@
-# Input Types
+# Input Types Text Password Email Number Date Etc
 
-`text`, `password`, `email`, `number`, `tel`, `url`, `date`, `time`, `color`, `range`, `search`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Checkboxes & Radio Buttons](03-checkboxes-and-radio-buttons.md)
+**What it will cover:** The full range of HTML5 `<input>` types and the validation/UI each one gets for free.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

@@ -1,5 +1,11 @@
-# Form Element Attributes
+# Form Element Attributes Action Method Enctype
 
-`action`, `method` (GET/POST), `enctype` (multipart/form-data for file uploads), `novalidate`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Input Types](02-input-types-text-password-email-number-date-etc.md)
+**What it will cover:** The `<form>` element's `action`, `method`, and `enctype` attributes and how they control submission.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

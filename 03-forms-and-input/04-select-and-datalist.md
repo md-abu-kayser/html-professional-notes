@@ -1,5 +1,11 @@
-# Select & Datalist
+# Select and Datalist
 
-`<select>` with `<option>`, `<optgroup>`. `<datalist>` for autocomplete suggestions.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: [Textarea & File Input](05-textarea-and-file-input.md)
+**What it will cover:** Dropdown selection with `<select>` and autocomplete suggestions with `<datalist>`.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.

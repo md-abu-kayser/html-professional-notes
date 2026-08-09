@@ -1,5 +1,11 @@
-# Autocomplete & Accessibility
+# Autocomplete and Accessibility
 
-`autocomplete` attribute values (e.g., `name`, `email`, `tel`). Labels, `aria-describedby`.
+> 📋 **Status:** Planned — this lesson isn't written yet.
 
-> 📘 Next: **04-multimedia-and-embedding** – [Audio Element](../04-multimedia-and-embedding/01-audio-element.md)
+**What it will cover:** The `autocomplete` attribute and the accessibility fundamentals every form needs.
+
+---
+
+This lesson is part of **[Forms & Input](./README.md)** in the [HTML Professional Notes](../README.md) curriculum.
+
+Want to help write it? See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the lesson template and workflow — PRs are very welcome.
